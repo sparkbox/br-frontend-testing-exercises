@@ -55,4 +55,20 @@ describe("Player", function() {
       }).toThrowError("song is already playing");
     });
   });
+
+  describe("#stop", function() {
+    it("should indicate that no song is currently playing", function() {
+      player.play(song);
+      player.stop();
+
+      // Verify no song is playing
+    });
+
+    it("should have no current song", function() {
+      player.play(song);
+      player.stop();
+
+      // Verify that there is no current song
+    });
+  });
 });

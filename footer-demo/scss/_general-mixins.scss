@@ -1,0 +1,117 @@
+@mixin sb-media($query) {
+  $serve-to-nomq-max-width: 60em !default;
+
+  @if $no-mq-support{
+    @content;
+  } @else {
+    @media ( 'min-width:' + $query ) {
+      @content;
+    }
+  }
+}
+
+@mixin rem( $property, $a:0, $b:$a, $c:$a, $d:$b ) {
+  @if ( $property == "font-size" ) {
+    // $a is the font size
+    // %b is the keyword
+    @if ( $a != $b ) {
+      font-size: $b;
+    }
+    @else {
+      font-size: $a * $base-font-multiplier * 16px;
+    }
+    font-size: $a * 1rem;
+  } @else {
+    $apx: $a * $base-font-multiplier * 16px;
+    $bpx: $b * $base-font-multiplier * 16px;
+    $cpx: $c * $base-font-multiplier * 16px;
+    $dpx: $d * $base-font-multiplier * 16px;
+    $arem: $a * 1rem;
+    $brem: $b * 1rem;
+    $crem: $c * 1rem;
+    $drem: $d * 1rem;
+
+    @if ( $property == "padding" or $property == "margin" ){
+      #{$property}: $apx $bpx $cpx $dpx;
+      #{$property}: $arem $brem $crem $drem;
+    } @else {
+      #{$property}: $apx;
+      #{$property}: $arem;
+    }
+  }
+}
+
+@mixin inline($val) {
+  display: inline-block;
+  vertical-align: $val;
+  .lt-ie8 & {
+    display: inline;
+    zoom: 1;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content }
+     @-moz-keyframes #{$name} { @content }
+      @-ms-keyframes #{$name} { @content }
+       @-o-keyframes #{$name} { @content }
+          @keyframes #{$name} { @content }
+}
+
+@mixin quick-transition {
+  @include transition(all 0.2s ease-out);
+}
+
+@mixin slow-transition {
+  @include transition(all 1s ease-out);
+}
+
+// Triangle
+@mixin triangle($position:"bottom", $color:"#000", $size:"1em", $opposite_size:"") {
+  $top: 0; $right: 0; $bottom: 0; $left: 0;
+  @if ( $position == "top" or $position == "bottom" ) {
+    $right: ($size/2) solid transparent;
+    $left: ($size/2) solid transparent;
+    @if ( $opposite_size != "" ) { $size: $opposite_size; }
+    @if ( $position == "top" ) {
+      $top: $size solid $color;
+      $bottom: 0 none;
+    }
+    @else if ( $position == "bottom" ) {
+      $top: 0 none;
+      $bottom: $size solid $color;
+    }
+  }
+  @if ( $position == "right" or $position == "left" ) {
+    $top: ($size/2) solid transparent;
+    $bottom: ($size/2) solid transparent;
+    @if ( $opposite_size != "" ) { $size: $opposite_size; }
+    @if ( $position == "right" ) {
+      $right: $size solid $color;
+      $left: 0 none;
+    }
+    @else if ( $position == "left" ) {
+      $right: 0 none;
+      $left: $size solid $color;
+    }
+  }
+  width: 0;
+  height: 0;
+  border-top: $top;
+  border-right: $right;
+  border-bottom: $bottom;
+  border-left: $left;
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+}

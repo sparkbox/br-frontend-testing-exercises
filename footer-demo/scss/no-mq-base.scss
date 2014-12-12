@@ -1,0 +1,9 @@
+$no-mq-support: true;
+
+@import "base";
+
+
+// fixing width of site for no-mq: BDC
+.lt-ie9 body {
+	min-width: 1050px !important;
+}

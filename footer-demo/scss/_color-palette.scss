@@ -1,0 +1,63 @@
+.site-color-palette {
+  > div {
+    width: 6em;
+    height: 6em;
+    display: inline-block;
+  }
+}
+
+.c-bg-primary {
+  background-color: $c-bg-primary;
+}
+
+.c-bg-primaryLight {
+  background-color: $c-bg-primaryLight;
+}
+
+.c-bg-primaryLight2x {
+  background-color: $c-bg-primaryLight2x;
+}
+
+.c-bg-primaryLight3x {
+  background-color: $c-bg-primaryLight3x;
+}
+
+.c-bg-primaryDark {
+  background-color: $c-bg-primaryDark;
+}
+
+.c-bg-darkGray {
+  background-color: $c-bg-darkGray;
+}
+
+.c-anchorLink {
+  background-color: $c-anchorLink;
+}
+
+.c-anchorLink-hover {
+  background-color: $c-anchorLink-hover;
+}
+
+.c-anchorLink-visited {
+  background-color: $c-anchorLink-visited;
+}
+
+.c-tx-logoColor {
+  background-color: $c-tx-logoColor;
+}
+
+.c-tx-dark {
+  background-color: $c-tx-dark;
+}
+
+.c-tx-light {
+  background-color: $c-tx-light;
+}
+
+.c-tx-light2x {
+  background-color: $c-tx-light2x;
+}
+
+.c-tx-light3x {
+  background-color: $c-tx-light3x;
+}

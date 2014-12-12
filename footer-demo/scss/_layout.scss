@@ -1,0 +1,131 @@
+.layout--container {
+  max-width: $bp-siteMaxWidth + 7.875;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.layout--container_small {
+  max-width: $bp-siteMaxWidth - 10;
+}
+
+$bp-foundryMaxWidth: 50em;
+
+.layout--foundry-container {
+  max-width: $bp-foundryMaxWidth;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  @include clearfix;
+
+  @include sb-media( $bp-foundryMaxWidth + 12 ) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.layout--left {
+  float: left;
+}
+
+.layout--right {
+  float: right;
+}
+
+.layout--horizontal-space {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.layout--bottom-space {
+  margin-bottom: 1em;
+
+  @include sb-media( 45em ) {
+    margin-bottom: 2.5em;
+  }
+}
+
+.layout--bottom-space-2x {
+  margin-bottom: 2em;
+
+  @include sb-media( 45em ) {
+    margin-bottom: 4em;
+  }
+}
+
+.layout--vertical-space {
+  margin-top: 1em;
+
+  @include sb-media( 45em ) {
+    margin-top: 2.5em;
+  }
+}
+
+.layout--vertical-space-2x {
+  margin-top: 2em;
+
+  @include sb-media( 45em ) {
+    margin-top: 3em;
+  }
+}
+
+.layout--vertical-space-3x {
+  margin-top: 3em;
+
+  @include sb-media( 45em ) {
+    margin-top: 7.5em;
+  }
+}
+
+.layout--centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.layout--layer-above-nav {
+  position: relative;
+  z-index: 2;
+  height: 500px;
+  text-align: center;
+}
+
+.layout--allows-right-sidebar {
+  @include sb-media( $bp-layout-medium ) {
+    width: 68%;
+    float: left;
+  }
+}
+
+.layout--right-sidebar {
+  @include sb-media( $bp-layout-medium ) {
+    width: 25%;
+    float: right;
+  }
+}
+
+.layout--hide-at-small{
+  display: none !important;
+  @include sb-media(38em){
+    display: inline !important;
+  }
+}
+
+// Naming experiment
+
+.layout--bump-left-at-medium{
+  @include sb-media( $bp-layout-medium ){
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.layout--x-wide {
+  &.layout--container {
+    max-width: 135em;
+  }
+}

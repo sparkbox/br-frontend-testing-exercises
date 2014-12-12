@@ -1,0 +1,37 @@
+// Icon Font
+@font-face {
+  font-family: Icon;
+  src:url('icons/sparkbox.eot');
+  src:url('icons/sparkbox.eot?#iefix') format('embedded-opentype'),
+      url('icons/sparkbox.ttf') format('truetype'),
+      url('icons/sparkbox.woff') format('woff'),
+      url('icons/sparkbox.svg#sparkbox') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before {
+  content: attr(data-icon);
+  color: white;
+  font-family: Icon;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*=" icon-"]:before {
+  font-family: Icon;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}

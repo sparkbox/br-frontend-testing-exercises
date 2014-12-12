@@ -1,0 +1,26 @@
+.text-title {
+  background-color: $c-bg-lightGray;
+  color: $c-tx-dark;
+  text-align: center;
+  padding-top: 2.5em;
+  padding-bottom: 2.3em;
+  @extend %content-padding;
+}
+
+.text-title--title {
+  @include rem(font-size, 2);
+  margin-bottom: .3em;
+
+  @include sb-media( $bp-layout-medium ) {
+    @include rem(font-size, 2.5);
+  }
+}
+
+.text-title--subtitle {
+  @include rem(font-size, 1.35);
+  margin: 0;
+
+  @include sb-media( $bp-layout-medium ) {
+    @include rem(font-size, 1.75);
+  }
+}

@@ -103,16 +103,23 @@ window.MAP =
     @markers = []
     count = 0
     for location in @mapLocations
-      if location.title == "Sparkbox Headquarters" || Date.parse(location.endDateText) > new Date()
+      if @isPublishable(location)
         count++
         marker = @plotMarker(location)
         unless marker == undefined or @goingToCity(location.city, location.state)
           @markers.push marker
 
-    @map.markerLayer.setGeoJSON(@markers)
-    @createPopups()
+      if @isRuntime()
+        @map.markerLayer.setGeoJSON(@markers)
+        @createPopups()
 
     @setEventCount count
+
+  isPublishable: ->
+    location.title == "Sparkbox Headquarters" || location.endDateText == undefined || location.endDateText > new Date()
+
+  isRuntime: ->
+    @map?
 
   listTemplate: Handlebars.compile """
     <ul>

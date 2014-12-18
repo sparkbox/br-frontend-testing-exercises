@@ -21,7 +21,7 @@ $c--standard-dark: #4CACBE;
 }
 
 %button_base {
-  @include transition(background-color 0.2s ease-in-out);
+  @include transition(background-color, 0.2s, ease-in-out);
   padding: 0.8em 1.4em;
 }
 

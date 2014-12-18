@@ -67,11 +67,11 @@
 }
 
 @mixin quick-transition {
-  @include transition(all 0.2s ease-out);
+  @include transition(all, 0.2s, ease-out);
 }
 
 @mixin slow-transition {
-  @include transition(all 1s ease-out);
+  @include transition(all, 1s, ease-out);
 }
 
 // Triangle
@@ -114,4 +114,26 @@
       -ms-transform: rotate(360deg);
        -o-transform: rotate(360deg);
           transform: rotate(360deg);
+}
+
+
+// Compass replacements
+@mixin box-sizing($box-model: $default-box-sizing) {
+  box-sizing: $box-model;
+  -webkit-box-sizing: $box-model;
+}
+
+@mixin transition($property, $delay: '.2s', $easing: 'ease-in') {
+  transition: $property $delay $easing;
+  -webkit-transition: $property $delay $easing;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin translate($translate-x: $default-translate-x, $translate-y: $default-translate-y, $only3d: false) {
+  $trans: translate($translate-x, $translate-y);
+  @include transform($trans, $only3d);
 }

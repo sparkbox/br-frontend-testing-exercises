@@ -138,14 +138,14 @@
     }
 
     &:hover {
-      @include opacity(0.7);
+      opacity: 0.7;
     }
   }
 }
 
 .site-footer--more-trigger-container {
   @include rem(width, 16);
-  @include transition(all .15s ease-out);
+  @include transition(all, .15s, ease-out);
   margin: 0 auto;
   clear: both;
   position: relative;
@@ -158,15 +158,17 @@
   padding-top: 1em;
 
   .no-touch &:hover, .site-footer--second-footer_is-open & {
-    @include transition(all .15s ease-out);
+    @include transition(all, .15s, ease-out);
     border-bottom: 60px solid lighten($c-bg-primaryLight, 7%);
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
-    @include transform(translate(0px,-14px));
+    transform: translate(0px,-14px);
+    -webkit-transform: translate(0px,-14px);
   }
 
   .no-touch .site-footer--second-footer_is-open &:hover {
-    @include transform(translate(0px,0px));
+    transform: translate(0px,0px);
+    -webkit-transform: translate(0px,0px);
   }
 
   &:after {

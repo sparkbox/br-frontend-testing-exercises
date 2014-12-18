@@ -96,7 +96,7 @@
 }
 
 %link-base {
-  @include transition(0.2s color);
+  @include transition(0.2s, color);
   text-decoration: underline;
 }
 

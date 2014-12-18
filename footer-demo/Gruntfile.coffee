@@ -23,9 +23,9 @@ module.exports = (grunt) ->
   grunt.registerTask "bustcache", ["bushcaster", "string-replace:dist"]
 
   # Production task
-  grunt.registerTask "dev", [ "root-canal", "javascript:dev", "compass:dev", "assemble", "watch"]
+  grunt.registerTask "dev", [ "root-canal", "javascript:dev", "sass", "assemble", "watch"]
 
-  grunt.registerTask "dist", [ "root-canal", "javascript:dist", "compass:dist", "assemble", "uglify", "clean:templates", "bustcache" ]
+  grunt.registerTask "dist", [ "root-canal", "javascript:dist", "sass", "assemble", "uglify", "clean:templates", "bustcache" ]
 
   # Default task
   grunt.registerTask "default", "dev"

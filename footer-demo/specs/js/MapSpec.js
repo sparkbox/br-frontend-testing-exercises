@@ -20,26 +20,30 @@
       });
     });
     return describe("coords", function() {
-      it("should return true for [0,0]", function() {
-        return expect(MAP.validCoordinates([0, 0])).toBe(true);
+      describe("valid", function() {
+        it("should return true for [0,0]", function() {
+          return expect(MAP.validCoordinates([0, 0])).toBe(true);
+        });
+        return it("should return true for [-23.123123, 76.2342345]", function() {
+          return expect(MAP.validCoordinates([-23.123123, 76.2342345])).toBe(true);
+        });
       });
-      it("should return true for [-23.123123, 76.2342345]", function() {
-        return expect(MAP.validCoordinates([-23.123123, 76.2342345])).toBe(true);
-      });
-      it("should return false for null", function() {
-        return expect(MAP.validCoordinates(null)).toBe(false);
-      });
-      it("should return false for [null,null]", function() {
-        return expect(MAP.validCoordinates([null, null])).toBe(false);
-      });
-      it("should return false for undefined", function() {
-        return expect(MAP.validCoordinates(void 0)).toBe(false);
-      });
-      it("should return false for []", function() {
-        return expect(MAP.validCoordinates([])).toBe(false);
-      });
-      it("should return false for [1,2,3]", function() {
-        return expect(MAP.validCoordinates([1, 2, 3])).toBe(false);
+      describe("invalid", function() {
+        it("should return false for null", function() {
+          return expect(MAP.validCoordinates(null)).toBe(false);
+        });
+        it("should return false for [null, null]", function() {
+          return expect(MAP.validCoordinates([null, null])).toBe(false);
+        });
+        it("should return false for undefined", function() {
+          return expect(MAP.validCoordinates(void 0)).toBe(false);
+        });
+        it("should return false for []", function() {
+          return expect(MAP.validCoordinates([])).toBe(false);
+        });
+        return it("should return false for [1, 2, 3]", function() {
+          return expect(MAP.validCoordinates([1, 2, 3])).toBe(false);
+        });
       });
       return it("should ignore markers when the coordinates are invalid", function() {
         spyOn(MAP, 'validCoordinates').andReturn(false);

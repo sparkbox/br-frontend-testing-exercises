@@ -22,26 +22,28 @@ describe "Mapbox Map", ->
       expect(icon).toEqual MAPDATA.icons.attending
 
   describe "coords", ->
-    it "should return true for [0,0]", ->
-      expect(MAP.validCoordinates([0,0])).toBe true
+    describe "valid", ->
+      it "should return true for [0,0]", ->
+        expect(MAP.validCoordinates([0,0])).toBe true
 
-    it "should return true for [-23.123123, 76.2342345]", ->
-      expect(MAP.validCoordinates([-23.123123, 76.2342345])).toBe true
+      it "should return true for [-23.123123, 76.2342345]", ->
+        expect(MAP.validCoordinates([-23.123123, 76.2342345])).toBe true
 
-    it "should return false for null", ->
-      expect(MAP.validCoordinates(null)).toBe false
+    describe "invalid", ->
+      it "should return false for null", ->
+        expect(MAP.validCoordinates(null)).toBe false
 
-    it "should return false for [null,null]", ->
-      expect(MAP.validCoordinates([null,null])).toBe false
+      it "should return false for [null, null]", ->
+        expect(MAP.validCoordinates([null, null])).toBe false
 
-    it "should return false for undefined", ->
-      expect(MAP.validCoordinates(undefined)).toBe false
+      it "should return false for undefined", ->
+        expect(MAP.validCoordinates(undefined)).toBe false
 
-    it "should return false for []", ->
-      expect(MAP.validCoordinates([])).toBe false
+      it "should return false for []", ->
+        expect(MAP.validCoordinates([])).toBe false
 
-    it "should return false for [1,2,3]", ->
-      expect(MAP.validCoordinates([1,2,3])).toBe false
+      it "should return false for [1, 2, 3]", ->
+        expect(MAP.validCoordinates([1, 2, 3])).toBe false
 
 
     it "should ignore markers when the coordinates are invalid", ->

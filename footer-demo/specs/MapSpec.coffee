@@ -54,7 +54,7 @@ describe "Mapbox Map", ->
       ).toBe undefined
 
   describe "createMarkers", ->
-    it "add each location to markers", ->
+    xit "add each location to markers", ->
       MAP.mapLocations = [
         # EXERCISE 2 - Make this test pass
       ]
@@ -63,7 +63,7 @@ describe "Mapbox Map", ->
 
       expect(MAP.markers.length).toBe 2
 
-    it "sets the event count", ->
+    xit "sets the event count", ->
       spyOn(MAP, 'setEventCount')
 
       # EXERCISE 2 - Make this test pass

@@ -7,7 +7,7 @@ module.exports = (grunt) ->
     livereload:
       files: ["dist/css/*", "dist/*.html"]
       options:
-        livereload: true
+        livereload: 9001
 
     images:
       files: "opt-imgs/*"
@@ -17,13 +17,13 @@ module.exports = (grunt) ->
       files: ["partials/*", "data/*"]
       tasks: ["assemble"]
       options:
-        livereload: true
+        livereload: 9001
 
     handlebarsHelpers:
       files: ["lib/helpers/*.coffee"]
       tasks: ["coffee:assemble", "assemble"]
       options:
-        livereload: true
+        livereload: 9001
 
     data:
       files: "data/**/*"

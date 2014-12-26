@@ -15,9 +15,9 @@ module.exports = (grunt) ->
   grunt.registerTask "report", [ "coffee:reporting", "plato", "clean:reporting", "exec:open_js_report" ]
 
   # Clean, compile and concatenate JS
-  grunt.registerTask "javascript:dev", [ "coffee:compile", "coffee:assemble", "coffee:test", "concat", "jasmine" ]
+  grunt.registerTask "javascript:dev", [ "coffee:assemble", "concat", "jasmine" ]
 
-  grunt.registerTask "javascript:dist", [ "coffee:compile", "coffee:assemble", "concat", "modernizr" ]
+  grunt.registerTask "javascript:dist", [ "coffee:assemble", "concat", "modernizr" ]
 
   #Cache Busting
   grunt.registerTask "bustcache", ["bushcaster", "string-replace:dist"]

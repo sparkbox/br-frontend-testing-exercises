@@ -7,27 +7,17 @@ module.exports = (grunt) ->
   grunt.loadTasks "grunt"
 
   # NOTE: this has to wipe out everything
-  grunt.registerTask "root-canal", [ "exec:clean_foundry", "clean:all", "grunticon:icons", "copy:main", "copy:img", "copy:grunticon"]
+  grunt.registerTask "copyFiles", [ "grunticon:icons", "copy:main", "copy:img", "copy:grunticon"]
 
-  grunt.registerTask "optimizeImages", [ "imageoptim", "copy:img", "copy:grunticon" ]
+  # Compile and concatenate JS
+  grunt.registerTask "javascript:dev", [ "jasmine" ]
 
-  # Reports
-  grunt.registerTask "report", [ "coffee:reporting", "plato", "clean:reporting", "exec:open_js_report" ]
-
-  # Clean, compile and concatenate JS
-  grunt.registerTask "javascript:dev", [ "coffee:assemble", "concat", "jasmine" ]
-
-  grunt.registerTask "javascript:dist", [ "coffee:assemble", "concat", "modernizr" ]
-
-  #Cache Busting
-  grunt.registerTask "bustcache", ["bushcaster", "string-replace:dist"]
+  grunt.registerTask "javascript:dist", [ "modernizr" ]
 
   # Production task
-  grunt.registerTask "dev", [ "root-canal", "javascript:dev", "sass", "assemble", "connect", "watch"]
+  grunt.registerTask "dev", [ "copyFiles", "javascript:dev", "sass", "assemble", "connect", "watch"]
 
-  grunt.registerTask "dist", [ "root-canal", "javascript:dist", "sass", "assemble", "uglify", "clean:templates", "bustcache" ]
+  grunt.registerTask "dist", [ "copyFiles", "javascript:dist", "sass", "assemble", "uglify" ]
 
   # Default task
   grunt.registerTask "default", "dev"
-
-  grunt.registerTask "test", [ "root-canal", "coffee:compile", "coffee:assemble", "coffee:test", "concat", "jasmine" ]

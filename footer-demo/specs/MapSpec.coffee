@@ -11,16 +11,6 @@ describe "Mapbox Map", ->
     it "should create the correct key when state is an empty string", ->
       expect(MAP.buildKey("Dayton", "", "USA")).toEqual("DaytonUSA")
 
-
-  describe "icons", ->
-
-    it "should default to the attending icon", ->
-      spyOn(MAP, 'validCoordinates').andReturn true
-
-      icon = MAP.plotMarker({}).properties.icon
-
-      expect(icon).toEqual MAPDATA.icons.attending
-
   describe "coords", ->
     describe "valid", ->
       it "should return true for [0,0]", ->

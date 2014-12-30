@@ -9,10 +9,6 @@ module.exports = (grunt) ->
       options:
         livereload: 9001
 
-    images:
-      files: "opt-imgs/*"
-      tasks: "optimizeImages"
-
     partials:
       files: ["partials/*", "data/*"]
       tasks: ["assemble"]
@@ -26,10 +22,6 @@ module.exports = (grunt) ->
     javascript:
       files: ["js/*.js"]
       tasks: "javascript:dev"
-
-    jasmine:
-      files: ["specs/*.js"]
-      tasks: ["jasmine"]
 
     publicDirectory:
       files: ["public/**/*"]

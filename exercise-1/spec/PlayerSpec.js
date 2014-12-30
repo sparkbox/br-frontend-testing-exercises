@@ -57,14 +57,14 @@ describe("Player", function() {
   });
 
   describe("#stop", function() {
-    it("should indicate that no song is currently playing", function() {
+    xit("should indicate that no song is currently playing", function() {
       player.play(song);
       player.stop();
 
       // Verify no song is playing
     });
 
-    it("should have no current song", function() {
+    xit("should have no current song", function() {
       player.play(song);
       player.stop();
 

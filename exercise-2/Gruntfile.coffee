@@ -11,13 +11,10 @@ module.exports = (grunt) ->
 
   grunt.registerTask "optimizeImages", [ "imageoptim", "copy:img", "copy:grunticon" ]
 
-  # Reports
-  grunt.registerTask "report", [ "coffee:reporting", "plato", "clean:reporting", "exec:open_js_report" ]
-
   # Clean, compile and concatenate JS
-  grunt.registerTask "javascript:dev", [ "coffee:assemble", "concat", "jasmine" ]
+  grunt.registerTask "javascript:dev", [ "concat", "jasmine" ]
 
-  grunt.registerTask "javascript:dist", [ "coffee:assemble", "concat", "modernizr" ]
+  grunt.registerTask "javascript:dist", [ "concat", "modernizr" ]
 
   #Cache Busting
   grunt.registerTask "bustcache", ["bushcaster", "string-replace:dist"]
@@ -30,4 +27,4 @@ module.exports = (grunt) ->
   # Default task
   grunt.registerTask "default", "dev"
 
-  grunt.registerTask "test", [ "root-canal", "coffee:compile", "coffee:assemble", "coffee:test", "concat", "jasmine" ]
+  grunt.registerTask "test", [ "root-canal", "concat", "jasmine" ]

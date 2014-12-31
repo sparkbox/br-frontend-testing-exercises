@@ -23,6 +23,10 @@ module.exports = (grunt) ->
       files: ["js/*.js"]
       tasks: "javascript:dev"
 
+    jasmine:
+      files: ["specs/**/*Spec.js"]
+      tasks: "jasmine"
+
     publicDirectory:
       files: ["public/**/*"]
       tasks: "default"

@@ -63,7 +63,7 @@ window.MAP = {
 
   plotMarker: function(location) {
     var icon, marker;
-    if (location && MAP.validCoordinates(location.coordinates) && (location.endDate === void 0 || location.endDate >= this.today)) {
+    if (location && MAP.validCoordinates(location.coordinates) && (location.endDate === 0 || location.endDate >= this.today)) {
       marker = JSON.parse(JSON.stringify(this.marker));
       marker.geometry.coordinates = location.coordinates;
       marker.properties.icon = JSON.parse(JSON.stringify(this.marker));

@@ -4,12 +4,15 @@ window.MAP = {
     geometry: {
       type: "Point"
     },
-    properties: {},
-    iconUrl: "/img/mapbox/marker--speaking.png",
-    iconSize: [44, 51],
-    iconAnchor: [22, 51],
-    popupAnchor: [0, -51],
-    className: "map--speaking"
+    properties: {
+      icon: {
+          iconUrl: "/img/mapbox/marker--speaking.png",
+          iconSize: [44, 51],
+          iconAnchor: [22, 51],
+          popupAnchor: [0, -51],
+          className: "map--speaking"
+      }
+    },
   },
 
   openPopup: function(id) {
@@ -62,11 +65,11 @@ window.MAP = {
   },
 
   plotMarker: function(location) {
-    var icon, marker;
-    if (location && MAP.validCoordinates(location.coordinates) && (location.endDate === 0 || location.endDate >= this.today)) {
-      marker = JSON.parse(JSON.stringify(this.marker));
+    var marker;
+
+    if (location && MAP.validCoordinates(location.coordinates)) {
+      marker = JSON.parse(JSON.stringify(MAP.marker));
       marker.geometry.coordinates = location.coordinates;
-      marker.properties.icon = JSON.parse(JSON.stringify(this.marker));
       marker.properties.description = location.description;
       marker.properties.title = location.title;
       marker.properties.city = location.city;
@@ -77,27 +80,21 @@ window.MAP = {
       marker.properties.people = location.people;
       marker.properties.startDate = location.startDateText;
     }
+
     return marker;
   },
 
   createMarkers: function() {
-    var count, location, marker, _i, _len, _ref;
-    this.markers = [];
-    count = 0;
-    _ref = this.mapLocations;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      location = _ref[_i];
+    this.markers = this.mapLocations
+      .map(this.plotMarker)
+      .filter( function(marker) { return marker != undefined; } );
 
-      count++;
-      marker = this.plotMarker(location);
-      if (marker !== undefined) {
-        this.markers.push(marker);
-      }
-
+    if(this.map != undefined) {
       this.map.markerLayer.setGeoJSON(this.markers);
       this.createPopups();
     }
-    return this.setEventCount(count);
+
+    return this.setEventCount(this.markers.length);
   },
 
   listTemplate: Handlebars.compile("<ul>\n  {{#each this}}\n    <li>\n      <a href=\"#\" title=\"View {{title}} on the map\" class=\"map-footer--nav-item {{#if is-highlighted}}map-footer--nav-item_highlighted{{/if}}\" data-marker-id=\"{{city}}{{state}}{{country}}\">\n        <h4 class=\"map-footer--nav-title\">{{title}}</h4>\n        {{#if startDate}}\n          {{toFromDate startDateText endDateText}}\n        {{/if}}\n        <span class=\"map-footer--nav-location\">{{city}}{{#if state}}, {{state}}{{/if}}{{#isnt country \"United States\"}}, {{country}}{{/isnt}} </span>\n      </a>\n    </li>\n  {{/each}}\n</ul>"),

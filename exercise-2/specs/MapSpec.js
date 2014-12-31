@@ -56,11 +56,13 @@ describe("Mapbox Map", function() {
   describe("createMarkers", function() {
     xit("add each location to markers", function() {
       MAP.mapLocations = [];
+
       expect(MAP.markers.length).toBe(2);
     });
 
     xit("sets the event count", function() {
       spyOn(MAP, 'setEventCount');
+
       expect(MAP.setEventCount).toHaveBeenCalledWith(2);
     });
   });

@@ -5,5 +5,6 @@ module.exports = (grunt) ->
       specs: "specs/*Spec.js"
       helpers: "specs/js/*Helper.js"
       vendor: ["dist/js/modernizr.js", "dist/js/jquery-1.9.1.min.js", "specs/lib/jasmine-fixture.js"]
+      keepRunner: true
 
   grunt.loadNpmTasks "grunt-contrib-jasmine"

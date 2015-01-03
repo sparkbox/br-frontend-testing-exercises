@@ -1,0 +1,29 @@
+// GENERAL VARIABLES
+
+// variables for the rem mixin located in general-mixins.scss
+$base-font-multiplier: 1;
+
+// variables for the sb-media mixin located in general-mixins.scss
+$breakpoint-no-queries: false;
+$breakpoint-no-query-wrappers: true;
+$nomq: ".lt-ie9 &, .no-mq";
+$hi-res: "@media (-webkit-min-device-pixel-ratio: 1.5, only screen) and (-o-min-device-pixel-ratio: 3/2, only screen) and (min-device-pixel-ratio: 1.5)";
+
+// layout variables
+$bp-siteMaxWidth: 65em;
+$bp-foundryMaxWidth: 50em;
+$bp-layout-small: 35em;
+$bp-layout-medium: 55em;
+$bp-layout-large: 75em;
+
+// common lengths
+$length--border-radius: 0.5em;
+
+// everything else
+
+// $focus-outline is used for link :focus states throughout the site
+// Example: `outline: $focus-outline`
+$focus-outline: thin dotted rgba(0, 0, 0, 0.35);
+// $focus-outline-light is used for link :focus states on dark backgrounds
+// Example: `outline: $focus-outline-light`
+$focus-outline-light: thin dotted rgba(255, 255, 255, 0.5);

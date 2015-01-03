@@ -1,0 +1,175 @@
+.long-reading {
+  // apply this class to stretches of content
+  // that are lengthy, such as
+  // blog articles or about pages.
+  // For comfortable reading.
+  font-size: 1.225em;
+  line-height: 1.8em;
+
+  img {
+    margin: 1.4em 0;
+  }
+
+  h1 {
+    margin: 1.3em 0 0.5em;
+
+    @include sb-media( $bp-layout-medium ) {
+      font-size: 2.8em;
+    }
+  }
+
+  h2 {
+    margin: 1.3em 0 0.5em;
+
+    @include sb-media( $bp-layout-medium ) {
+      font-size: 2.1em;
+    }
+  }
+
+  h3 {
+    margin: 1.5em 0 0.7em;
+
+    @include sb-media( $bp-layout-medium ) {
+      font-size: 1.5em;
+    }
+  }
+
+  h2 + h3 {
+    margin-top: .8em;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid $c-bg-primary-desaturated;
+    margin: 2.1em 0;
+  }
+
+  ul {
+    padding-left: 2em;
+    margin: 1.9em 0;
+  }
+
+  li {
+    margin-bottom: .6em;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  a {
+    color: $c-anchorLink;
+    text-decoration: underline;
+
+    // prevent long links from breaking out of container
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+
+    &:hover {
+      color: $c-anchorLink-hover;
+    }
+    &:visited {
+      color: $c-anchorLink-visited;
+    }
+  }
+
+  blockquote {
+    margin: 2em 0;
+    padding: 0 2em;
+    border-left: .25em solid $c-bg-primary;
+    font-style: italic;
+    line-height: 1.9;
+
+    p {
+      margin: 0;
+      color: $c-tx-dark;
+    }
+
+    @include sb-media( $bp-layout-small ) {
+      font-size: 1.3em;
+    }
+  }
+}
+
+%link-base {
+  @include transition(0.2s, color);
+  text-decoration: underline;
+}
+
+.default-link {
+  // apply this class to
+  // things that should be styled like
+  // your run-of-the mill
+  // blue, underlined links.
+  @extend %link-base;
+  color: $c-anchorLink;
+
+  &:visited {
+    color: $c-anchorLink-visited;
+  }a
+  &:hover {
+    color: $c-anchorLink-hover;
+  }
+}
+
+.long-reading_feature {
+  h1, h2, h3, h4, h5, h6 {
+    color: $c-tx-dark;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    width: 112%;
+    max-width: none;
+    margin-left: -6%;
+
+    @include sb-media( $bp-layout-small ) {
+      margin: 2.5em 0 3.2em -6%;
+    }
+  }
+}
+
+.light-link {
+  @extend %link-base;
+  color: #C9ECF1;
+
+  &:visited {
+    color: #C9ECF1;
+  }
+}
+
+.white-link {
+  @extend %link-base;
+
+  color: #fff;
+
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+
+.wysiwyg {
+  // Use this class to wrap content
+  // that comes from a source that
+  // does not allow for classes on elements,
+  // such as a wysiwg field or markdown.
+  //
+  // This adds default styles
+  // That may have otherwise been reset
+
+  a {
+    @extend .default-link;
+  }
+
+  p {
+    @extend .long-reading;
+  }
+}

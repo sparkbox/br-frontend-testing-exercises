@@ -1,0 +1,45 @@
+# SVG support
+AddType image/svg+xml svg
+AddType image/svg+xml svgz
+AddEncoding x-gzip .svgz
+
+# web font support
+AddType application/vnd.ms-fontobject .eot
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddType font/woff .woff
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^feed-with-summaries /foundry/feed-with-summaries [R=302,L]
+RewriteRule ^feed-mail /foundry/feed-mail [R=302,L]
+RewriteRule ^feed-with-images /foundry/feed-with-images [R=302,L]
+RewriteRule ^feed /foundry/feed [R=302,L]
+
+RewriteRule ^about /team [R=302,L]
+RewriteRule ^smartsites /work [R=302,L]
+RewriteRule ^apprenticeships https://docs.google.com/a/heysparkbox.com/spreadsheet/viewform?formkey=dG9LNXU2M05MZEVnUE4teHJqeW9VSUE6MQ [R=302,L]
+
+RewriteCond $1 !\.(js|css|svg|gif|jpe?g|png)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d [OR]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} https
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI}
+
+ErrorDocument 404 /404.html
+
+# specify cache times for specific filetypes
+<ifmodule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 1 second"
+ExpiresByType text/html "access plus 7200 seconds"
+ExpiresByType image/gif "access plus 518400 seconds"
+ExpiresByType image/jpeg "access plus 518400 seconds"
+ExpiresByType image/png "access plus 518400 seconds"
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/javascript "access plus 216000 seconds"
+ExpiresByType application/x-javascript "access plus 216000 seconds"
+</ifmodule>

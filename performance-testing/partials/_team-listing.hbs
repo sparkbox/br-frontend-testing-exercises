@@ -1,0 +1,13 @@
+<div class="team-listing">
+  <ul>
+    {{#each team-listing}}
+      <li>
+        {{#if this.first-name}}
+          {{> _team-listing--person }}
+        {{else}}
+          {{> _team-listing--principle }}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>

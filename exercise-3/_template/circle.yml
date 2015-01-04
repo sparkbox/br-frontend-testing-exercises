@@ -1,0 +1,9 @@
+test:
+  override:
+    - ./node_modules/.bin/grunt ci
+
+# deployment:
+#  staging:
+#    branch: master
+#    commands:
+#      - node_modules/.bin/divshot deploy staging --token $DIVSHOT_TOKEN

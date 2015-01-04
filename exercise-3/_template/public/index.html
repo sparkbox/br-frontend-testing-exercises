@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Right: Frontend Testing</title>
+</head>
+<body>
+  <h1>Look ma, I'm testing my frontend!</h1>
+
+  <form action="">
+    <label id="sidea-label" for="sidea">
+      Side A: <input type="text" id="sidea">
+    </label>
+    <label id="sideb-label" for="sideb">
+      Side B: <input type="text" id="sideb">
+    </label>
+    <label id="sidec-label" for="sidec">
+      Side C: <input type="text" id="sidec">
+    </label>
+  </form>
+
+  <div id="classification"></div>
+
+  <script src="js/exercise-3.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      new App().start();
+    });
+  </script>
+</body>
+</html>

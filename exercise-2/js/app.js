@@ -6,11 +6,11 @@ window.MAP = {
     },
     properties: {
       icon: {
-          iconUrl: "/img/mapbox/marker--speaking.png",
-          iconSize: [44, 51],
-          iconAnchor: [22, 51],
-          popupAnchor: [0, -51],
-          className: "map--speaking"
+        iconUrl: "/img/mapbox/marker--speaking.png",
+        iconSize: [44, 51],
+        iconAnchor: [22, 51],
+        popupAnchor: [0, -51],
+        className: "map--speaking"
       }
     },
   },

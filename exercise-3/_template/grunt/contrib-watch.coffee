@@ -25,6 +25,6 @@ module.exports = (grunt) ->
 
     publicDirectory:
       files: ["public/**/*"]
-      tasks: "default"
+      tasks: "dev"
 
   grunt.loadNpmTasks "grunt-contrib-watch"

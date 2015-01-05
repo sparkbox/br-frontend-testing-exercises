@@ -15,12 +15,12 @@ module.exports = (grunt) ->
   grunt.registerTask "javascript:dist", [ "concat", "jasmine" ]
 
   # Production task
-  grunt.registerTask "dev", [ "root-canal", "javascript:dev", "connect", "watch"]
+  grunt.registerTask "dev", [ "root-canal", "javascript:dev"]
 
   grunt.registerTask "dist", [ "root-canal", "javascript:dist", "uglify"]
 
   # Default task
-  grunt.registerTask "default", "dev"
+  grunt.registerTask "default", ["dev", "connect", "watch"]
 
   # Run on CircleCI (or your fav CI service)
-  grunt.registerTask "ci", "dev"
+  grunt.registerTask "ci", "dist"

@@ -1,4 +1,4 @@
-cp -R _template ../../br-frontend-testing-flow && \
+cp -R br-frontend-testing-flow ../.. && \
   cd ../../br-frontend-testing-flow && \
   git init && \
   git add . && \

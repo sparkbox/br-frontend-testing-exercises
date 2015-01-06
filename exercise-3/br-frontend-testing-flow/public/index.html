@@ -3,19 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <title>Build Right: Frontend Testing</title>
+  <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-align: center;
+    }
+    label {
+      display: inline-table;
+      background-color: #ddd;
+      border: 1px solid #ccc;
+      padding: .25em;
+      border-radius: 4px;
+    }
+    label span,
+    label input {
+      display: table-cell;
+    }
+    label span {
+      color: #888;
+      padding: .25em .5em .25em .25em;
+    }
+    label input {
+      margin: 0;
+      padding: .25em;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      background-color: white;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 1em;
+    }
+    label input:active,
+    label input:focus {
+      outline: none;
+      border-color: #0080ff;
+    }
+    #classification {
+      text-align: center;
+      margin: 1em;
+      font-size: 2em;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <h1>Look ma, I'm testing my frontend!</h1>
 
   <form action="">
     <label id="sidea-label" for="sidea">
-      Side A: <input type="text" id="sidea">
+      <span>Side A</span><input type="text" id="sidea">
     </label>
     <label id="sideb-label" for="sideb">
-      Side B: <input type="text" id="sideb">
+      <span>Side B</span><input type="text" id="sideb">
     </label>
     <label id="sidec-label" for="sidec">
-      Side C: <input type="text" id="sidec">
+      <span>Side C</span><input type="text" id="sidec">
     </label>
   </form>
 

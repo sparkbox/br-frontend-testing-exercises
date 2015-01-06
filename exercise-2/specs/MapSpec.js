@@ -48,7 +48,7 @@ describe("Mapbox Map", function() {
     });
 
     it("should ignore markers when the coordinates are invalid", function() {
-      spyOn(MAP, 'validCoordinates').andReturn(false);
+      spyOn(MAP, 'validCoordinates').and.returnValue(false);
       expect(MAP.plotMarker( {coordinates: ""} )).toBeUndefined();
     });
   });

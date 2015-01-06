@@ -2,7 +2,8 @@
   "name": "exercise-3",
   "version": "0.1.0",
   "scripts": {
-    "start": "./node_modules/.bin/grunt"
+    "start": "./node_modules/.bin/grunt",
+    "divshot": "node_modules/.bin/divshot login && node_modules/.bin/divshot config:add name \"br-frontend-testing-$USERNAME\" && echo '' && echo 'Your divshot auth token is:' && node_modules/.bin/divshot auth:token"
   },
   "devDependencies": {
     "divshot-cli": "^1.4.3",

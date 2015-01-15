@@ -17,5 +17,9 @@ describe('ClassifiesTriangle', function() {
     expect(ClassifiesTriangle).toBeDefined();
   });
 
+  it('classifies as scalene 4,3,2', function() {
+    var result = new ClassifiesTriangle().classify(4,3,2);
+    expect(result).toEqual('scalene');
+  });
 });
 

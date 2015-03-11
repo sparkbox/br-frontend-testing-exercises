@@ -2,3 +2,4 @@
 dist/
 .grunt
 node_modules
+.DS_Store

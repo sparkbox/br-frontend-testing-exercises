@@ -1,5 +1,7 @@
 {
   "name": "Sparkbox",
+  "description": "Exercise 2 of Build Right: Frontend Testing workshop by Sparkbox",
+  "repository": "https://github.com/sparkbox/br-frontend-testing-demo",
   "version": "0.1.0",
   "scripts": {
     "start": "./node_modules/.bin/grunt"

@@ -54,9 +54,20 @@ describe("Mapbox Map", function() {
   });
 
   describe("createMarkers", function() {
-    xit("add each location to markers", function() {
-      MAP.mapLocations = [];
+    beforeEach(function() {
+      MAP.mapLocations = [
+        {
+          title: 'SXSW',
+          coordinates: [30.2642942, -97.7440445]
+        },
+        {
+          title: 'Converge SE',
+          coordinates: [34.0007104, -81.0348144]
+        }
+      ];
+    });
 
+    xit("add each location to markers", function() {
       expect(MAP.markers.length).toBe(2);
     });
 

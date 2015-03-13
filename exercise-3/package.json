@@ -2,7 +2,7 @@
   "name": "exercise-3",
   "version": "0.1.0",
   "scripts": {
-    "start": "./node_modules/.bin/grunt",
+    "start": "./node_modules/.bin/grunt"
   },
   "devDependencies": {
     "divshot-cli": "^1.4.3",

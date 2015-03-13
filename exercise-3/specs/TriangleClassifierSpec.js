@@ -12,13 +12,13 @@
  **********************************/
 
 
-describe('ClassifiesTriangle', function() {
+describe('TriangleClassifier', function() {
   it('exists', function() {
-    expect(ClassifiesTriangle).toBeDefined();
+    expect(TriangleClassifier).toBeDefined();
   });
 
   it('classifies as scalene 4,3,2', function() {
-    var result = new ClassifiesTriangle().classify(4,3,2);
+    var result = new TriangleClassifier().classify(4,3,2);
     expect(result).toEqual('scalene');
   });
 });

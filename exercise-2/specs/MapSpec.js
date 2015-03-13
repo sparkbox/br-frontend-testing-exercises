@@ -55,26 +55,31 @@ describe("Mapbox Map", function() {
 
   describe("createMarkers", function() {
     beforeEach(function() {
-      MAP.mapLocations = [
-        {
-          title: 'SXSW',
-          coordinates: [30.2642942, -97.7440445]
-        },
-        {
-          title: 'Converge SE',
-          coordinates: [34.0007104, -81.0348144]
-        }
-      ];
+      // step 5: Extract duplication here
     });
 
     xit("add each location to markers", function() {
-      expect(MAP.markers.length).toBe(2);
+      MAP.mapLocations = [
+        { title: 'SXSW', coordinates: [30.2642942, -97.7440445] },
+        { title: 'Converge SE', coordinates: [34.0007104, -81.0348144] }
+      ];
+
+      // step 1: Add locations to map
+
+      expect(MAP.markers.length).toBe();  // step 2: What should this equal?
     });
 
     xit("sets the event count", function() {
+      MAP.mapLocations = [
+        { title: 'SXSW', coordinates: [30.2642942, -97.7440445] },
+        { title: 'Converge SE', coordinates: [34.0007104, -81.0348144] }
+      ];
+
       spyOn(MAP, 'setEventCount');
 
-      expect(MAP.setEventCount).toHaveBeenCalledWith(2);
+      // step 3: Add locations to map
+
+      expect(MAP.setEventCount).toHaveBeenCalledWith();  // step 4: What parameters should have been passed
     });
   });
 });

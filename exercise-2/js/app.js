@@ -70,15 +70,9 @@ window.MAP = {
     if (location && MAP.validCoordinates(location.coordinates)) {
       marker = JSON.parse(JSON.stringify(MAP.marker));
       marker.geometry.coordinates = location.coordinates;
-      marker.properties.description = location.description;
-      marker.properties.title = location.title;
       marker.properties.city = location.city;
       marker.properties.state = location.state;
-      marker.properties.country = location.country;
       marker.properties.id = MAP.buildKey(location.city, location.state, location.country);
-      marker.properties.count = 1;
-      marker.properties.people = location.people;
-      marker.properties.startDate = location.startDateText;
     }
 
     return marker;
@@ -102,12 +96,12 @@ window.MAP = {
 
   popupContent: function(props) {
     var city, country, location, locations, state, _i, _len, _ref;
-    city = props.city, state = props.state, country = props.country;
+    city = props.city, state = props.state;
     locations = [];
     _ref = this.mapLocations;
     for (_i = 0, _len = _ref.length; _i < _len; _i++) {
       location = _ref[_i];
-      if (location.city === city && location.state === state && location.country === country) {
+      if (location.city === city && location.state === state) {
         locations.push(location);
       }
     }

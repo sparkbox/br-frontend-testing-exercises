@@ -1,4 +1,4 @@
-# Team Flow
+# Exercise 3: Team Flow
 
 ## Git
 

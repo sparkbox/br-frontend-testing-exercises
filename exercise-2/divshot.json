@@ -1,6 +1,5 @@
 {
-  "name": "br-frontend-testing-flow",
+  "name": "",
   "root": "dist",
-  "clean_urls": true,
-  "error_page": "error.html"
+  "clean_urls": true
 }

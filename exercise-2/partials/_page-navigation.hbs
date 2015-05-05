@@ -1,8 +1,0 @@
-{{#if page-data.results-count}}
-<div class="pagination--location">Showing entries <span class="location--highlight">1</span> to <span class="location--highlight">5</span> out of <span class="location--highlight">{{page-data.results-count}}</span></div>
-{{/if}}
-
-<a {{#unless page-data.first-page}}href="#"{{/unless}} class="pagination--nav-link pagination--first-link{{#if page-data.first-page}} pagination--disabled-link{{/if}}">First</a>
-<a {{#unless page-data.first-page}}href="#"{{/unless}} class="pagination--nav-link pagination--prev-link{{#if page-data.first-page}} pagination--disabled-link{{/if}}">Previous</a>
-<a href="#" class="pagination--nav-link pagination--next-link">Next</a>
-<a href="#" class="pagination--nav-link pagination--last-link">Last</a>

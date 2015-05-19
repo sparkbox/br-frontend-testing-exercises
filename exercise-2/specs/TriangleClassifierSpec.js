@@ -21,5 +21,8 @@ describe('TriangleClassifier', function() {
     var result = new TriangleClassifier().classify(4,3,2);
     expect(result).toEqual('scalene');
   });
+
+  // What happens when a side is 0?
+  // What about a negative side?
 });
 

@@ -1,9 +1,15 @@
 var App = function() {
-  this.start = function() {
+  var self = this;
+
+  self.start = function() {
+    self.$classification = document.getElementById('classification');
+
     clearClassification();
   };
 
   function clearClassification() {
-    document.getElementById('classification').innerText = "";
+    self.$classification.innerText = "";
   }
+
+  return self;
 };

@@ -8,6 +8,14 @@
 1. `git commit -m "init repo"`
 
 
+## Github
+
+1. Log into [Github.com](https://github.com)
+1. Create a [new repo](https://github.com/new)
+  - Do _not_ choose a readme, gitignore or license file!
+1. Follow the _push an existing repository from the command line_ instructions
+
+
 ## Divshot
 
 1. `npm install -g divshot-cli`

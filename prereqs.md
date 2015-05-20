@@ -16,5 +16,4 @@ exercises.
 * Git Client
 * [Github](https://github.com) Account
 * [CircleCI](https://circleci.com) Account
-* [Code Climate](https://codeclimate.com) Account
 * [Divshot](https://divshot.com) Account

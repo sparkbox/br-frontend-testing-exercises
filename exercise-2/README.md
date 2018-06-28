@@ -8,17 +8,12 @@ the lengths of its sides.
 
 ## Requirements
 Create a class TriangleClassifier with the following method: 
-`classify(len1, len2, len3)`
+`classify(triangle)`
 
-This method accepts three numeric values each representing the length of one
-side of a triangle. It returns a classification, `scalene`, `isosceles`, or 
-`equilateral`, where the return value corresponds to the actual type of the 
-triangle.  In addition, the classify method should perform error checking if the 
-given lengths of the sides cannot correspond to a real triangle. In this case, 
-it should raise the error ArgumentError.
-
-## Bonus
-Using `affix`, write tests for and build the App module to integrate
-TriangleClassifier with `index.html`.
- 
-
+This method accepts an object with three methods (`len1()`, `len2()`, `len3()`)
+each representing the length of one side of a triangle. It returns a
+classification, `scalene`, `isosceles`, or `equilateral`, where the return
+value corresponds to the actual type of the triangle.  In addition, the
+classify method should perform error checking if the given lengths of the sides
+cannot correspond to a real triangle. In this case, it should raise the error
+ArgumentError.

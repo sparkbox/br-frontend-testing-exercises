@@ -1,6 +1,6 @@
 var TriangleClassifier = function() {
 
-  this.classify = function(a,b,c) {
+  this.classify = function(triangle) {
     return "scalene";
   };
 };

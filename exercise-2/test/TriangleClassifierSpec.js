@@ -20,7 +20,12 @@ describe('TriangleClassifier', () => {
   });
 
   it('classifies as scalene 4,3,2', () => {
-    var result = new TriangleClassifier().classify(4,3,2);
+    const triangle = {
+      len1: () => 4,
+      len2: () => 3,
+      len3: () => 2
+    };
+    var result = new TriangleClassifier().classify(triangle);
     expect(result).to.equal('scalene');
   });
 

@@ -1,14 +1,14 @@
 var DomTriangle = function(sideAElement, sideBElement, sideCElement) {
 
-  this.a = function() {
+  this.len1 = function() {
     return parseInt(sideAElement.value);
   };
 
-  this.b = function() {
+  this.len2 = function() {
     return parseInt(sideBElement.value);
   };
 
-  this.c = function() {
+  this.len3 = function() {
     return parseInt(sideCElement.value);
   };
 };

@@ -4,3 +4,5 @@ var TriangleClassifier = function() {
     return "scalene";
   };
 };
+
+module.exports = TriangleClassifier;

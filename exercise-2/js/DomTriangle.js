@@ -12,3 +12,5 @@ var DomTriangle = function(sideAElement, sideBElement, sideCElement) {
     return parseInt(sideCElement.value);
   };
 };
+
+module.exports = DomTriangle;

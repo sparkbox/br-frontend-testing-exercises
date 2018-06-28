@@ -11,15 +11,17 @@
  *  b + c > a 
  **********************************/
 
+const TriangleClassifier = require('../js/TriangleClassifier');
+const expect = require('chai').expect;
 
-describe('TriangleClassifier', function() {
-  it('exists', function() {
-    expect(TriangleClassifier).toBeDefined();
+describe('TriangleClassifier', () => {
+  it('exists', () => {
+    expect(TriangleClassifier).to.exist;
   });
 
-  it('classifies as scalene 4,3,2', function() {
+  it('classifies as scalene 4,3,2', () => {
     var result = new TriangleClassifier().classify(4,3,2);
-    expect(result).toEqual('scalene');
+    expect(result).to.equal('scalene');
   });
 
   // What happens when a side is 0?

@@ -1,7 +1,7 @@
 
 describe("Player", () => {
-  var player;
-  var song;
+  let player;
+  let song;
 
   beforeEach(() => {
     player = new Player();

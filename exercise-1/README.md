@@ -1,6 +1,6 @@
 # Exercise 1: Getting to Know Jasmine
 
-1. Open `SpecRunner.html` in your browser
+1. Open `TestRunner.html` in your browser
 2. Locate `stop` tests in `spec/PlayerSpec.js`
 4. Complete the _should indicate that no song is currently playing_ test:
   - Un-ignore the first test (line 60: `xit` -> `it`)

@@ -1,15 +1,18 @@
-/******************************************************
- * Credits:
- *  jasmine-fixture by Justin Searls (@searls)
- *****************************************************/
+const App = require('../js/App')
+
+const render = (html) => document.querySelector('body').innerHTML = html;
+const reset = () => render('');
+
+afterEach(reset);
 
 describe('App', () => {
-  xit('clears classification on startup', () => {
-    $classificationEl = affix('#classification'); // affix returns a jQuery object
-    $classificationEl.text('not a triangle');
+  it('clears classification on startup', () => {
+    render`
+      <div id="classification">not a triangle</div>
+    `;
 
     new App().start();
 
-    expect($classificationEl.text()).toEqual('');
+    expect(document.querySelector('#classification').innerHTML).toEqual('');
   });
 });

@@ -8,8 +8,10 @@ var App = function() {
   };
 
   function clearClassification() {
-    self.$classification.innerText = "";
+    self.$classification.innerHTML = "";
   }
 
   return self;
 };
+
+module.exports = App;

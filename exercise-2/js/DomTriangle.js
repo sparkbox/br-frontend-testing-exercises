@@ -13,4 +13,4 @@ var DomTriangle = function(sideAElement, sideBElement, sideCElement) {
   };
 };
 
-module.exports = DomTriangle;
+export default DomTriangle;

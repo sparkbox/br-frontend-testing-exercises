@@ -4,9 +4,14 @@
   "scripts": {
     "test": "jest --verbose",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand",
-    "start": "jest --watch"
+    "test:watch": "jest --watch",
+    "start": "browser-sync --no-notify --files '*'"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "browsersync": "0.0.1-security",
     "chai": "^4.1.2",
     "jest": "^23.6.0"
   }

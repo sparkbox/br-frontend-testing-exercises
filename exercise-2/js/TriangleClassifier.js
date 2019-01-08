@@ -5,4 +5,4 @@ var TriangleClassifier = function() {
   };
 };
 
-module.exports = TriangleClassifier;
+export default TriangleClassifier;

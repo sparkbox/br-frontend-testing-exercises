@@ -62,8 +62,9 @@
 
   <div id="classification"></div>
 
-  <script src="js/exercise-2.js"></script>
-  <script>
+  <script type="module">
+    import App from './js/App.js';
+
     document.addEventListener("DOMContentLoaded", function(event) {
       new App().start();
     });

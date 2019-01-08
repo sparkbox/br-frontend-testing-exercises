@@ -1,4 +1,4 @@
-const DomTriangle = require('../js/DomTriangle');
+import DomTriangle from '../js/DomTriangle';
 const expect = require('chai').expect;
 
 describe('DomTriangle', () => {

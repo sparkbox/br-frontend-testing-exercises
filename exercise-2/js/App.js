@@ -14,4 +14,4 @@ var App = function() {
   return self;
 };
 
-module.exports = App;
+export default App;

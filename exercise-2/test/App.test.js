@@ -1,4 +1,4 @@
-const App = require('../js/App')
+import App from '../js/App';
 
 const render = (html) => document.querySelector('body').innerHTML = html;
 const reset = () => render('');

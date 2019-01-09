@@ -1,4 +1,4 @@
-var DomTriangle = function(sideAElement, sideBElement, sideCElement) {
+const DomTriangle = function(sideAElement, sideBElement, sideCElement) {
 
   this.len1 = function() {
     return parseInt(sideAElement.value);

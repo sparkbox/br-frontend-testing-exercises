@@ -24,7 +24,7 @@ describe('TriangleClassifier', () => {
       len2: () => 3,
       len3: () => 2
     };
-    var result = new TriangleClassifier().classify(triangle);
+    const result = new TriangleClassifier().classify(triangle);
     expect(result).toBe('scalene');
   });
 

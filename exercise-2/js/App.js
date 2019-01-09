@@ -1,5 +1,5 @@
-var App = function() {
-  var self = this;
+const App = function() {
+  const self = this;
 
   self.start = function() {
     self.$classification = document.getElementById('classification');

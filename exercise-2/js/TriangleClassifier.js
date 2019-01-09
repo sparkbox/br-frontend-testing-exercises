@@ -1,4 +1,4 @@
-var TriangleClassifier = function() {
+const TriangleClassifier = function() {
 
   this.classify = function(triangle) {
     return "scalene";

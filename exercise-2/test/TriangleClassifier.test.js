@@ -12,11 +12,10 @@
  **********************************/
 
 import TriangleClassifier from '../js/TriangleClassifier';
-const expect = require('chai').expect;
 
 describe('TriangleClassifier', () => {
   it('exists', () => {
-    expect(TriangleClassifier).to.exist;
+    expect(TriangleClassifier).toBeDefined();
   });
 
   it('classifies as scalene 4,3,2', () => {
@@ -26,7 +25,7 @@ describe('TriangleClassifier', () => {
       len3: () => 2
     };
     var result = new TriangleClassifier().classify(triangle);
-    expect(result).to.equal('scalene');
+    expect(result).toBe('scalene');
   });
 
   // What happens when a side is 0?
